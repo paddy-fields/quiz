@@ -51,7 +51,7 @@
     margin-bottom: 30px;
   }
 
-  .submit {
+  .btn {
     width: 300px;
     padding: 10px;
     background: #9DCA83;
