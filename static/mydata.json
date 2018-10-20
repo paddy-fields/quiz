@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "language": "English",
+    "countryCode": "en",
+    "question": "Where is gomo's head office?",
+    "answer1": "Brighton office",
+    "answer2": "Sheffield office",
+    "answer3": "London office",
+    "modal": "Well done, gomo's head office is in Brighton",
+    "factsHeading": "Facts about Brighton",
+    "factsContent": "Brighton is an English seaside resort town. About an hour south of London by train, it's a popular day trip destination. Its broad shingle beach is backued by amusement arcades and Regency-era buildings. Brighton Pier, in the central waterfront section, opened in 1899 and now has ride and food kiosks. The town is also known for its nightlife, arts scene, shopping and festivals"
+  },
+   {
+    "id": 2,
+    "language": "French",
+    "countryCode": "fr",
+    "question": "Où est le siège de gomo?",
+    "answer1": "Bureau de Brighton",
+    "answer2": "Bureau de Sheffield",
+    "answer3": "Bureau de Londres",
+    "modal": "Bien fait, le siège de gomo est à Brighton",
+    "factsHeading": "Faits sur Brighton",
+    "factsContent": "Brighton est une station balnéaire anglaise. À environ une heure de train au sud de Londres, il s’agit d’une destination très prisée. Sa large plage de galets est bordée d’arcades de divertissement et de bâtiments de l’époque Régence. La jetée de Brighton, dans la partie centrale du front de mer, a ouvert ses portes en 1899 et abrite désormais des kiosques de restauration et de restauration. La ville est également connue pour sa vie nocturne, sa scène artistique, ses boutiques et ses festivals"
+  }
+]
