@@ -50,10 +50,9 @@
 
     methods: {
       //Get the translations from mydata.json, and store as 'content'
+      // For local environment, change to /static/mydata.json
       getLanguage() {
-        // JSON file added to static folder for local development purposes.
-        // Production version would be hosted, and http path referenced here
-        axios.get('/static/mydata.json')
+        axios.get('/data/mydata.json')
           .then(response => {
             this.content = response.data;
           })
