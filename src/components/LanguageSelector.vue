@@ -52,7 +52,7 @@
       //Get the translations from mydata.json, and store as 'content'
       // For local environment, change to /static/mydata.json
       getLanguage() {
-        axios.get('/data/mydata.json')
+        axios.get('http://patrickhurley.co.uk/data/mydata.json')
           .then(response => {
             this.content = response.data;
           })
