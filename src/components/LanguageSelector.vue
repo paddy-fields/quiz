@@ -1,18 +1,20 @@
 <template lang="html">
 
 	<div class="content">
-        <h1>Please select your language</h1>
-        <select v-model="lang">
-          <option 
-          	v-for="(text, index) in content"
-          	v-bind:value="index">
-            {{text.language}}
-          </option>    
-        </select>
-         
-        <button class="submit" @click="redirectUser()">Submit</button>
-
-      </div>
+    <div class="container language--selector">
+      <h1>Please select your language</h1>
+      <select v-model="lang">
+        <option 
+          v-for="(text, index) in content"
+          v-bind:value="index">
+          {{text.language}}
+        </option>    
+      </select>
+     
+      <button class="btn" @click="redirectUser()">Submit</button>
+      
+    </div>
+  </div>
   
 </template>
 
@@ -50,3 +52,11 @@
     }
   }
 </script>
+
+<style lang="scss">
+
+  .language--selector {
+    text-align: center;
+  }
+  
+</style>
