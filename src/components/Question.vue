@@ -91,21 +91,28 @@
 
     methods: {
       getLanguage() {
-        // json file added to static folder for local development
-        // real-world would be hosted, and http path referenced here
+        // given the countryCode from the query string, find the 
+        // index of the array which contains it, and assign the index
+        // to 'lang'. The found index will be used to determine which 
+        // language to display on the page
         axios.get('/static/mydata.json')
           .then(response => {
           	var response = response.data;
+            // store lang from url
           	var countryCode = this.$route.query.lang
             this.content = response;
+            // find index with countryCode
             this.lang = response.findIndex(function(item, i){
-			  return item.countryCode === countryCode
-			});
+      			  return item.countryCode === countryCode
+      			});
           })
           .catch(error => {
             console.log(error);
           })
       },
+      // if the answer matches the correctAnswer property in the json,
+      // set correct to be true, else false.
+      // show modal on both occasions
       checkAnswer() {
       	if(this.answer===this.content[this.lang].correctAnswer){
       		this.correct = true;
@@ -115,11 +122,13 @@
       	}
       	this.showModal = true;
       },
+      // when closing the modal, if the answer is correct, then show the facts
       closeModal() {
       	this.correct ? this.showFacts = true : this.showFacts = false;	
       	this.showModal = false;
       }
     },
+    // compute the modal message based on the chosen language
     computed: {
     	message: function(){
     		if(this.correct){

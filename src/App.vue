@@ -7,7 +7,12 @@
 </template>
 
 <script>
- 
+
+  /* I have decided to split the app into 2 vue components 
+     called 'LanguageSelector' and 'Question'
+     These can be found in the components folder. 
+  */
+
   export default {
     data () {
       return {
@@ -25,7 +30,8 @@
 
   /* Decided to build custom grid system, as a framework may be 
      too bloated for the size of this application currently. 
-     If the application were to grow, Bootstrap or Foundation could be integrated.
+     If the application were to grow, Bootstrap or Foundation could be 
+     integrated to help speed up development.
   */
 
   // Breakpoints
@@ -106,6 +112,7 @@
     font-size: 25px;
   }
 
+  // button styling used across the app
   .btn {
     width: 300px;
     padding: 10px;

@@ -3,6 +3,7 @@
 	<div class="content">
     <div class="container language--selector">
       <h1>Please select your language</h1>
+      <!-- when a language is selected, the index of the array is binded to 'lang' in vue -->
       <select v-model="lang">
         <option 
           v-for="(text, index) in content"
@@ -19,6 +20,20 @@
 </template>
 
 <script>
+
+  /* 
+     I have chosen to keep all of the language data in a single json file.
+     This way, when any a new language is added, it will automatically be added to the 
+     drop down list as the above v-for loops through the array
+
+     Alternatively the languages could have been split into their own json files, eg)
+     en.json, fr.json, however I feel the chosen method is easier to scale.
+
+     With more time it would be valuable to have an admin section when the JSON 
+     file can be updated.
+  */
+
+  // axios used to make the http requests
   import axios from 'axios'
 
   export default {
@@ -34,9 +49,10 @@
     },
 
     methods: {
+      //Get the translations from mydata.json, and store as 'content'
       getLanguage() {
-        // json file added to static folder for local development
-        // real-world would be hosted, and http path referenced here
+        // JSON file added to static folder for local development purposes.
+        // Production version would be hosted, and http path referenced here
         axios.get('/static/mydata.json')
           .then(response => {
             this.content = response.data;
@@ -45,6 +61,10 @@
             console.log(error);
           })
       },
+      // When submit is clicked, find the country code of the chosen language
+      // and send this as a query string in the URL.
+      // The advantage of this method is that it would allow a link to be 
+      // sent to users with their language already pre-populated
       redirectUser(){
       	var countryCode = this.content[this.lang].countryCode;
       	this.$router.push({ name: 'question', query: { lang: countryCode }})
