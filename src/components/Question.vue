@@ -6,21 +6,25 @@
 
       <div class="row">
 
+        <!-- question -->
+        <div class="col-12 question--title">
+          <h1>{{content[lang].question}}</h1>
+        </div>
+
         <div class="col-6">
 
-          <div class="question--block">
-            <!-- question -->
-            <h1>{{content[lang].question}}</h1>
+          <div class="question--options">
             <ul v-model="answer">
               <li><input v-model="answer" type="radio" value="1" name="question">{{content[lang].answer1}}</li>
               <li><input v-model="answer" type="radio" value="2" name="question">{{content[lang].answer2}}</li>
               <li><input v-model="answer" type="radio" value="3" name="question">{{content[lang].answer3}}</li>
             </ul>
             <button class="btn" @click="checkAnswer()">Submit</button>
-            <!-- /question -->  
+            
           </div>
-          
+
         </div>
+        <!-- /question -->  
         
         <div class="col-6">
           <div class="question--map">
@@ -141,13 +145,21 @@
   $screen-md-min: '992px';
   $screen-md-max: '1999px';
 
-
-  .question--block {
-    text-align: center;
-    margin: 0 auto;
+  .question--options {
     @media only screen and (min-width: $screen-md-min){
-      padding: 0 100px;
+      padding: 0 120px;
     }
+    ul {
+      padding-left: 0;
+    }
+    input {
+      margin-right: 10px;
+    }
+  }
+
+  .question--title {
+    text-align: center;
+    margin-bottom: 20px;
   }
 
   .question--map {
