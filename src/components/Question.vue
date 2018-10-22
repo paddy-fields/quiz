@@ -28,7 +28,7 @@
         
         <div class="col-6">
           <div class="question--map">
-            <img src="../assets/gomo-map.png">
+            <img src="dist/gomo-map.png">
           </div>
         </div>
 
@@ -95,7 +95,7 @@
         // index of the array which contains it, and assign the index
         // to 'lang'. The found index will be used to determine which 
         // language to display on the page
-        axios.get('http://patrickhurley.co.uk/data/mydata.json')
+        axios.get('./dist/mydata.json')
           .then(response => {
           	var response = response.data;
             // store lang from url
